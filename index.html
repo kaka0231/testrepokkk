@@ -3,110 +3,207 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demo Landing Page</title>
+    <title>Alex Morgan | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio website for Alex Morgan, product designer and frontend developer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <nav class="nav container">
-        <div class="brand">DemoSite</div>
-        <div class="nav-links">
-          <a href="#features">Features</a>
+      <div class="container nav">
+        <a href="#top" class="brand">AM</a>
+        <nav class="nav-links" aria-label="Main navigation">
           <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
-        </div>
-        <button class="nav-button">Get Started</button>
-      </nav>
+        </nav>
+        <a class="nav-button" href="#contact">Hire me</a>
+      </div>
     </header>
 
-    <main>
+    <main id="top">
       <section class="hero container">
         <div class="hero-copy">
-          <span class="eyebrow">Simple static website demo</span>
-          <h1>Launch your next idea with a clean, modern homepage.</h1>
-          <p>
-            This demo page is built to help you test local hosting, deployment,
-            and basic page layout before pushing a real website live.
+          <p class="eyebrow">Designer • Developer • Strategist</p>
+          <h1>
+            I build <span>thoughtful digital experiences</span>
+            that feel as good as they perform.
+          </h1>
+          <p class="intro">
+            I’m Alex Morgan, a product designer and frontend developer helping
+            startups and creative teams turn ideas into polished, conversion-driven
+            experiences.
           </p>
           <div class="actions">
-            <button class="primary">View Demo</button>
-            <button class="secondary">Learn More</button>
+            <a class="primary" href="#work">View projects</a>
+            <a class="secondary" href="#about">More about me</a>
           </div>
-          <ul class="stats">
-            <li><strong>3x</strong><span>Faster setup</span></li>
-            <li><strong>100%</strong><span>Static hosting friendly</span></li>
-            <li><strong>24/7</strong><span>Easy to test</span></li>
+          <ul class="meta-list">
+            <li><strong>6+</strong><span>Years experience</span></li>
+            <li><strong>28</strong><span>Projects launched</span></li>
+            <li><strong>9</strong><span>Global clients</span></li>
           </ul>
         </div>
 
-        <div class="hero-card">
-          <div class="card-top">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <div class="mock-window">
-            <div class="mock-header">
-              <span>website-demo</span>
-              <span class="pill">Live</span>
+        <div class="profile-panel" aria-label="Profile summary">
+          <div class="profile-card">
+            <div class="profile-image">
+              <div class="avatar">AM</div>
             </div>
-            <div class="mock-content">
-              <div class="bar short"></div>
-              <div class="bar"></div>
-              <div class="bar medium"></div>
-              <div class="grid">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-              </div>
+            <div class="profile-info">
+              <p class="label">Available for freelance</p>
+              <h2>Alex Morgan</h2>
+              <p>Product designer & frontend developer</p>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="features" class="features container">
-        <h2>Why this works well for testing</h2>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <span class="icon">⚡</span>
-            <h3>Fast</h3>
-            <p>Very lightweight and quick to upload to static hosting providers.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">🎨</span>
-            <h3>Simple</h3>
-            <p>Clean layout with no dependencies required to preview the page.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">🧪</span>
-            <h3>Reliable</h3>
-            <p>Perfect for checking hosting behavior, paths, and basic rendering.</p>
-          </article>
+          <div class="mini-stats">
+            <div>
+              <span class="value">UI/UX</span>
+              <span class="tag">Design systems</span>
+            </div>
+            <div>
+              <span class="value">React</span>
+              <span class="tag">Frontend builds</span>
+            </div>
+            <div>
+              <span class="value">Growth</span>
+              <span class="tag">Strategy</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="about" class="about container">
-        <div class="about-copy">
-          <span class="eyebrow">About the demo</span>
-          <h2>Built to simulate a real landing page.</h2>
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>Helping brands turn complex ideas into clear experiences.</h2>
+        </div>
+        <div class="about-grid">
           <p>
-            You can change the text, colors, and layout to match your own project.
-            Once you’re happy with the result, host it on Netlify, Vercel, GitHub
-            Pages, or any static file server.
+            I work at the intersection of design, product thinking, and frontend
+            implementation. My goal is simple: create interfaces that are easy to
+            understand, beautiful to use, and built to support business growth.
+          </p>
+          <p>
+            Whether it’s a startup landing page, a SaaS dashboard, or a portfolio
+            refresh, I design systems and deliver code that keeps the experience
+            cohesive from first click to final conversion.
           </p>
         </div>
-        <div class="about-panel">
-          <div class="mini-box"></div>
-          <div class="mini-box highlight"></div>
-          <div class="mini-box small"></div>
+      </section>
+
+      <section id="work" class="projects container">
+        <div class="section-heading inline-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Featured projects</h2>
+          </div>
+          <a href="#contact">Request a quote</a>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card featured">
+            <div class="project-image project-one"></div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Branding</span>
+                <span>2025</span>
+              </div>
+              <h3>Northstar Studio</h3>
+              <p>
+                Reframed a creative studio’s positioning and built a conversion-focused
+                portfolio that improved inquiries and clarified their services.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-two"></div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>SaaS</span>
+                <span>2024</span>
+              </div>
+              <h3>Flux Metrics</h3>
+              <p>
+                Designed and built a dashboard redesign focused on usability,
+                onboarding clarity, and faster decision-making for product teams.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-three"></div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>E-commerce</span>
+                <span>2023</span>
+              </div>
+              <h3>Harbor Goods</h3>
+              <p>
+                Improved product storytelling and shopping flow for a boutique brand,
+                resulting in higher engagement and smoother mobile checkout.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="skills container">
+        <div class="section-heading">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Design systems, interfaces, and product thinking.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-block">
+            <h3>Design</h3>
+            <ul>
+              <li>UX strategy</li>
+              <li>Wireframing</li>
+              <li>UI design</li>
+              <li>Design systems</li>
+            </ul>
+          </div>
+          <div class="skill-block">
+            <h3>Development</h3>
+            <ul>
+              <li>HTML / CSS</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Responsive builds</li>
+            </ul>
+          </div>
+          <div class="skill-block">
+            <h3>Collaboration</h3>
+            <ul>
+              <li>Product discovery</li>
+              <li>Stakeholder workshops</li>
+              <li>Figma to code</li>
+              <li>Conversion-focused thinking</li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
 
     <footer id="contact" class="site-footer">
       <div class="container footer-inner">
-        <p>© 2026 DemoSite</p>
-        <a href="mailto:hello@example.com">hello@example.com</a>
+        <div>
+          <p class="eyebrow">Let’s work together</p>
+          <h3>Available for selected projects in 2026.</h3>
+        </div>
+        <a href="mailto:alex@portfolio.dev">alex@portfolio.dev</a>
       </div>
     </footer>
 
