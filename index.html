@@ -1,212 +1,753 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Morgan | Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio website for Alex Morgan, product designer and frontend developer."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav">
-        <a href="#top" class="brand">AM</a>
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a class="nav-button" href="#contact">Hire me</a>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseIQ — Modern Analytics Dashboard Demo</title>
+  <meta name="description" content="Interactive SaaS analytics dashboard demo featuring real-time KPIs, interactive charts, transaction filtering, and theme switching." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="#" class="brand-logo" aria-label="PulseIQ Homepage">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <span class="brand-name">Pulse<span>IQ</span></span>
+        </a>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close sidebar">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
-    </header>
 
-    <main id="top">
-      <section class="hero container">
-        <div class="hero-copy">
-          <p class="eyebrow">Designer • Developer • Strategist</p>
-          <h1>
-            I build <span>thoughtful digital experiences</span>
-            that feel as good as they perform.
-          </h1>
-          <p class="intro">
-            I’m Alex Morgan, a product designer and frontend developer helping
-            startups and creative teams turn ideas into polished, conversion-driven
-            experiences.
-          </p>
-          <div class="actions">
-            <a class="primary" href="#work">View projects</a>
-            <a class="secondary" href="#about">More about me</a>
-          </div>
-          <ul class="meta-list">
-            <li><strong>6+</strong><span>Years experience</span></li>
-            <li><strong>28</strong><span>Projects launched</span></li>
-            <li><strong>9</strong><span>Global clients</span></li>
-          </ul>
+      <nav class="sidebar-nav">
+        <div class="nav-group">
+          <div class="nav-group-title">Main Menu</div>
+          <a href="#" class="nav-link active" data-tab="dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="9" rx="1.5" />
+              <rect x="14" y="3" width="7" height="5" rx="1.5" />
+              <rect x="14" y="12" width="7" height="9" rx="1.5" />
+              <rect x="3" y="16" width="7" height="5" rx="1.5" />
+            </svg>
+            <span>Overview</span>
+            <span class="badge pulse-badge">Live</span>
+          </a>
+          <a href="#analytics" class="nav-link" data-tab="analytics">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3v18h18" />
+              <path d="M18 9l-5 5-4-4-5 5" />
+            </svg>
+            <span>Analytics</span>
+          </a>
+          <a href="#reports" class="nav-link" data-tab="reports">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            <span>Reports</span>
+          </a>
         </div>
 
-        <div class="profile-panel" aria-label="Profile summary">
-          <div class="profile-card">
-            <div class="profile-image">
-              <div class="avatar">AM</div>
-            </div>
-            <div class="profile-info">
-              <p class="label">Available for freelance</p>
-              <h2>Alex Morgan</h2>
-              <p>Product designer & frontend developer</p>
-            </div>
-          </div>
-
-          <div class="mini-stats">
-            <div>
-              <span class="value">UI/UX</span>
-              <span class="tag">Design systems</span>
-            </div>
-            <div>
-              <span class="value">React</span>
-              <span class="tag">Frontend builds</span>
-            </div>
-            <div>
-              <span class="value">Growth</span>
-              <span class="tag">Strategy</span>
-            </div>
-          </div>
+        <div class="nav-group">
+          <div class="nav-group-title">Operations</div>
+          <a href="#transactions" class="nav-link" data-tab="transactions">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <line x1="2" y1="10" x2="22" y2="10" />
+            </svg>
+            <span>Transactions</span>
+            <span class="nav-count" id="navTxCount">28</span>
+          </a>
+          <a href="#customers" class="nav-link" data-tab="customers">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <span>Customers</span>
+          </a>
+          <a href="#settings" class="nav-link" data-tab="settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+            <span>Settings</span>
+          </a>
         </div>
-      </section>
+      </nav>
 
-      <section id="about" class="about container">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2>Helping brands turn complex ideas into clear experiences.</h2>
+      <!-- Sidebar Promo Card -->
+      <div class="sidebar-promo">
+        <div class="promo-badge">PRO PLAN</div>
+        <div class="promo-title">Enterprise Cloud</div>
+        <p class="promo-desc">94% monthly compute quota used. Upgrade for unlimited events.</p>
+        <div class="promo-progress-bar">
+          <div class="promo-progress-fill" style="width: 94%;"></div>
         </div>
-        <div class="about-grid">
-          <p>
-            I work at the intersection of design, product thinking, and frontend
-            implementation. My goal is simple: create interfaces that are easy to
-            understand, beautiful to use, and built to support business growth.
-          </p>
-          <p>
-            Whether it’s a startup landing page, a SaaS dashboard, or a portfolio
-            refresh, I design systems and deliver code that keeps the experience
-            cohesive from first click to final conversion.
-          </p>
-        </div>
-      </section>
-
-      <section id="work" class="projects container">
-        <div class="section-heading inline-heading">
-          <div>
-            <p class="eyebrow">Selected work</p>
-            <h2>Featured projects</h2>
-          </div>
-          <a href="#contact">Request a quote</a>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card featured">
-            <div class="project-image project-one"></div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span>Branding</span>
-                <span>2025</span>
-              </div>
-              <h3>Northstar Studio</h3>
-              <p>
-                Reframed a creative studio’s positioning and built a conversion-focused
-                portfolio that improved inquiries and clarified their services.
-              </p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image project-two"></div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span>SaaS</span>
-                <span>2024</span>
-              </div>
-              <h3>Flux Metrics</h3>
-              <p>
-                Designed and built a dashboard redesign focused on usability,
-                onboarding clarity, and faster decision-making for product teams.
-              </p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image project-three"></div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span>E-commerce</span>
-                <span>2023</span>
-              </div>
-              <h3>Harbor Goods</h3>
-              <p>
-                Improved product storytelling and shopping flow for a boutique brand,
-                resulting in higher engagement and smoother mobile checkout.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="skills" class="skills container">
-        <div class="section-heading">
-          <p class="eyebrow">Capabilities</p>
-          <h2>Design systems, interfaces, and product thinking.</h2>
-        </div>
-
-        <div class="skills-grid">
-          <div class="skill-block">
-            <h3>Design</h3>
-            <ul>
-              <li>UX strategy</li>
-              <li>Wireframing</li>
-              <li>UI design</li>
-              <li>Design systems</li>
-            </ul>
-          </div>
-          <div class="skill-block">
-            <h3>Development</h3>
-            <ul>
-              <li>HTML / CSS</li>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>Responsive builds</li>
-            </ul>
-          </div>
-          <div class="skill-block">
-            <h3>Collaboration</h3>
-            <ul>
-              <li>Product discovery</li>
-              <li>Stakeholder workshops</li>
-              <li>Figma to code</li>
-              <li>Conversion-focused thinking</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer id="contact" class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <p class="eyebrow">Let’s work together</p>
-          <h3>Available for selected projects in 2026.</h3>
-        </div>
-        <a href="mailto:alex@portfolio.dev">alex@portfolio.dev</a>
+        <button class="promo-btn" id="upgradeBtn">Upgrade Tier</button>
       </div>
-    </footer>
 
-    <script src="script.js"></script>
-  </body>
+      <!-- User Profile Widget -->
+      <div class="sidebar-profile">
+        <div class="user-avatar">
+          <span>AC</span>
+          <span class="user-status-dot"></span>
+        </div>
+        <div class="user-info">
+          <div class="user-name">Alex Chen</div>
+          <div class="user-role">Head of Product</div>
+        </div>
+        <button class="logout-btn" title="Account options" aria-label="Account options">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="12" cy="5" r="1"></circle>
+            <circle cx="12" cy="19" r="1"></circle>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <div class="main-wrapper">
+      <!-- Top Header / App Bar -->
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="page-title-group">
+            <h1 class="page-title">Executive Dashboard</h1>
+            <p class="page-subtitle">Real-time revenue metrics, system health, and customer insights</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Quick Search -->
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="globalSearchInput" placeholder="Quick search... (Press /)" autocomplete="off" />
+            <kbd class="shortcut-tag">/</kbd>
+          </div>
+
+          <!-- Date Range Filter Selector -->
+          <div class="range-selector" role="group" aria-label="Timeframe range">
+            <button class="range-btn" data-range="7d">7D</button>
+            <button class="range-btn active" data-range="30d">30D</button>
+            <button class="range-btn" data-range="90d">90D</button>
+            <button class="range-btn" data-range="1y">1Y</button>
+          </div>
+
+          <!-- Theme Toggle Button -->
+          <button class="icon-action-btn theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+
+          <!-- Notification Button & Dropdown -->
+          <div class="notification-wrapper">
+            <button class="icon-action-btn" id="notifBellBtn" aria-label="View notifications">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+              <span class="notification-badge" id="notifBadge">3</span>
+            </button>
+            <div class="notification-dropdown" id="notifDropdown">
+              <div class="notif-header">
+                <span class="notif-title">Notifications</span>
+                <button class="notif-clear-btn" id="clearNotifsBtn">Mark all read</button>
+              </div>
+              <div class="notif-list" id="notifList">
+                <div class="notif-item unread">
+                  <div class="notif-indicator"></div>
+                  <div class="notif-content">
+                    <p class="notif-text"><strong>Enterprise Contract</strong> signed by Stripe Inc ($36,000/yr)</p>
+                    <span class="notif-time">10 minutes ago</span>
+                  </div>
+                </div>
+                <div class="notif-item unread">
+                  <div class="notif-indicator"></div>
+                  <div class="notif-content">
+                    <p class="notif-text"><strong>System Alert:</strong> API peak reached 4,200 req/sec smoothly</p>
+                    <span class="notif-time">42 minutes ago</span>
+                  </div>
+                </div>
+                <div class="notif-item unread">
+                  <div class="notif-indicator"></div>
+                  <div class="notif-content">
+                    <p class="notif-text"><strong>Weekly Report</strong> is ready to download</p>
+                    <span class="notif-time">2 hours ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Primary CTA: Add Transaction -->
+          <button class="primary-btn" id="openAddTxModalBtn">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>New Sale</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Scrollable View -->
+      <main class="dashboard-body">
+        <!-- Live Alert Banner -->
+        <div class="banner-notice">
+          <div class="banner-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div class="banner-text">
+            <strong>Q3 Benchmark Exceeded:</strong> Platform ARR reached $1.82M ahead of schedule. Auto-scaling clusters operating at 99.98% SLA.
+          </div>
+          <button class="banner-dismiss" id="dismissBannerBtn" aria-label="Dismiss banner">&times;</button>
+        </div>
+
+        <!-- 4 Top Executive KPI Cards -->
+        <section class="kpi-grid" aria-label="Key Performance Indicators">
+          <!-- KPI 1: Revenue -->
+          <article class="kpi-card" id="kpiRevenue">
+            <div class="kpi-header">
+              <div class="kpi-label-group">
+                <span class="kpi-title">Gross Revenue</span>
+                <span class="kpi-period" id="kpiPeriodLabel">Last 30 Days</span>
+              </div>
+              <div class="kpi-icon-wrap icon-purple">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value-row">
+              <span class="kpi-value" id="kpiRevenueVal">$128,430</span>
+              <span class="trend-badge positive" id="kpiRevenueTrend">
+                <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="3" fill="none">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+                <span>+14.2%</span>
+              </span>
+            </div>
+            <div class="kpi-sparkline" id="sparklineRevenue"></div>
+            <div class="kpi-footer">
+              <span class="kpi-subtext">+$15,920 from previous period</span>
+            </div>
+          </article>
+
+          <!-- KPI 2: Active Users -->
+          <article class="kpi-card" id="kpiUsers">
+            <div class="kpi-header">
+              <div class="kpi-label-group">
+                <span class="kpi-title">Active Organizations</span>
+                <span class="kpi-period">Monthly Active</span>
+              </div>
+              <div class="kpi-icon-wrap icon-blue">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value-row">
+              <span class="kpi-value" id="kpiUsersVal">24,892</span>
+              <span class="trend-badge positive" id="kpiUsersTrend">
+                <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="3" fill="none">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+                <span>+8.7%</span>
+              </span>
+            </div>
+            <div class="kpi-sparkline" id="sparklineUsers"></div>
+            <div class="kpi-footer">
+              <span class="kpi-subtext">+1,980 new org accounts</span>
+            </div>
+          </article>
+
+          <!-- KPI 3: Avg Order Value -->
+          <article class="kpi-card" id="kpiAov">
+            <div class="kpi-header">
+              <div class="kpi-label-group">
+                <span class="kpi-title">Average Order Value</span>
+                <span class="kpi-period">ACV / Seat</span>
+              </div>
+              <div class="kpi-icon-wrap icon-emerald">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value-row">
+              <span class="kpi-value" id="kpiAovVal">$142.80</span>
+              <span class="trend-badge positive" id="kpiAovTrend">
+                <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="3" fill="none">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+                <span>+3.2%</span>
+              </span>
+            </div>
+            <div class="kpi-sparkline" id="sparklineAov"></div>
+            <div class="kpi-footer">
+              <span class="kpi-subtext">Expansion revenue up 18%</span>
+            </div>
+          </article>
+
+          <!-- KPI 4: Conversion Rate -->
+          <article class="kpi-card" id="kpiConversion">
+            <div class="kpi-header">
+              <div class="kpi-label-group">
+                <span class="kpi-title">Trial-to-Paid Rate</span>
+                <span class="kpi-period">Funnel conversion</span>
+              </div>
+              <div class="kpi-icon-wrap icon-amber">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value-row">
+              <span class="kpi-value" id="kpiConversionVal">3.84%</span>
+              <span class="trend-badge negative" id="kpiConversionTrend">
+                <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="3" fill="none">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+                <span>-0.4%</span>
+              </span>
+            </div>
+            <div class="kpi-sparkline" id="sparklineConversion"></div>
+            <div class="kpi-footer">
+              <span class="kpi-subtext">Target benchmark: 3.50%</span>
+            </div>
+          </article>
+        </section>
+
+        <!-- Charts Row: Main Area Chart & Traffic Acquisition Donut -->
+        <section class="charts-grid" aria-label="Visual Analytics">
+          <!-- Major Revenue Chart (2/3 width) -->
+          <div class="chart-card main-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <h2 class="chart-card-title">Revenue Trajectory</h2>
+                <p class="chart-card-subtitle">Aggregated revenue performance with interactive points and trend projection</p>
+              </div>
+              <div class="chart-actions">
+                <div class="pill-group" id="chartIntervalSelector">
+                  <button class="pill-btn active" data-interval="day">Daily</button>
+                  <button class="pill-btn" data-interval="week">Weekly</button>
+                  <button class="pill-btn" data-interval="month">Monthly</button>
+                </div>
+                <button class="secondary-btn" id="simulateDataBtn" title="Generate real-time simulated update">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <polyline points="1 20 1 14 7 14"></polyline>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                  </svg>
+                  <span>Simulate Pulse</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Chart Canvas & SVG Container -->
+            <div class="chart-container" id="revenueChartContainer">
+              <svg id="revenueChartSvg" class="interactive-chart-svg" preserveAspectRatio="none" viewBox="0 0 800 320">
+                <defs>
+                  <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--accent-purple)" stop-opacity="0.35" />
+                    <stop offset="100%" stop-color="var(--accent-purple)" stop-opacity="0.0" />
+                  </linearGradient>
+                  <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#8b5cf6" />
+                    <stop offset="100%" stop-color="#3b82f6" />
+                  </linearGradient>
+                  <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+                <!-- Grid Lines -->
+                <g class="chart-grid-lines" id="chartGridLines"></g>
+                <!-- Area Path -->
+                <path id="chartAreaPath" class="chart-area-path" fill="url(#areaGradient)" d=""></path>
+                <!-- Line Path -->
+                <path id="chartLinePath" class="chart-line-path" stroke="url(#lineGradient)" d=""></path>
+                <!-- Interactive Crosshair -->
+                <line id="chartCrosshair" class="chart-crosshair" x1="0" y1="20" x2="0" y2="280" opacity="0"></line>
+                <!-- Interactive Active Point -->
+                <circle id="chartActivePoint" class="chart-active-point" cx="0" cy="0" r="6" opacity="0"></circle>
+                <!-- X-Axis Labels -->
+                <g class="chart-axis-labels" id="chartAxisLabels"></g>
+              </svg>
+
+              <!-- Floating Tooltip -->
+              <div class="chart-tooltip" id="chartTooltip">
+                <div class="tooltip-date" id="tooltipDate">Oct 24, 2026</div>
+                <div class="tooltip-stat">
+                  <span class="tooltip-indicator"></span>
+                  <span class="tooltip-label">Revenue:</span>
+                  <span class="tooltip-value" id="tooltipRevenue">$4,850.00</span>
+                </div>
+                <div class="tooltip-stat sub">
+                  <span class="tooltip-label">Transactions:</span>
+                  <span class="tooltip-value" id="tooltipTx">34 orders</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-legend-row">
+              <div class="legend-item">
+                <span class="legend-dot dot-purple"></span>
+                <span>Actual Revenue ($)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot dot-blue"></span>
+                <span>Moving 7-Day Trend</span>
+              </div>
+              <div class="legend-note">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span>Live telemetry updated 2s ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Minor Traffic Donut Chart (1/3 width) -->
+          <div class="chart-card donut-chart-card">
+            <div class="chart-card-header">
+              <div>
+                <h2 class="chart-card-title">Traffic Distribution</h2>
+                <p class="chart-card-subtitle">Acquisition channels by conversion volume</p>
+              </div>
+            </div>
+
+            <div class="donut-chart-wrapper">
+              <div class="donut-svg-box">
+                <svg id="donutSvg" viewBox="0 0 200 200" class="donut-svg">
+                  <!-- Segments rendered dynamically in JS -->
+                </svg>
+                <div class="donut-center-text">
+                  <span class="donut-center-val" id="donutTotalVal">100%</span>
+                  <span class="donut-center-lbl">Share</span>
+                </div>
+              </div>
+
+              <!-- Channel Breakdown Legend -->
+              <div class="donut-legend" id="donutLegend">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <div class="donut-footer">
+              <div class="growth-highlight">
+                <span class="highlight-title">Top Channel:</span>
+                <span class="highlight-desc">Organic Search drives 42% of high-intent enterprise pipeline.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Operational Secondary Section: System Health & Funnel -->
+        <section class="metrics-split-grid">
+          <!-- Conversion Funnel Card -->
+          <div class="sub-card">
+            <div class="sub-card-header">
+              <h3 class="sub-card-title">Acquisition Funnel</h3>
+              <span class="tag-status">Weekly Health</span>
+            </div>
+            <div class="funnel-container">
+              <div class="funnel-step">
+                <div class="funnel-meta">
+                  <span class="step-name">1. Site Visitors</span>
+                  <span class="step-count">142,500</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar bar-purple" style="width: 100%;"></div></div>
+              </div>
+              <div class="funnel-step">
+                <div class="funnel-meta">
+                  <span class="step-name">2. Account Signups</span>
+                  <span class="step-count">18,490 (13.0%)</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar bar-blue" style="width: 68%;"></div></div>
+              </div>
+              <div class="funnel-step">
+                <div class="funnel-meta">
+                  <span class="step-name">3. Product Qualified</span>
+                  <span class="step-count">7,240 (39.1%)</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar bar-cyan" style="width: 44%;"></div></div>
+              </div>
+              <div class="funnel-step">
+                <div class="funnel-meta">
+                  <span class="step-name">4. Paid Subscriptions</span>
+                  <span class="step-count">1,820 (25.1%)</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar bar-emerald" style="width: 26%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Global Telemetry & System Latency -->
+          <div class="sub-card">
+            <div class="sub-card-header">
+              <h3 class="sub-card-title">Global API Latency</h3>
+              <span class="status-pill status-healthy">Healthy (99.98%)</span>
+            </div>
+            <div class="server-regions">
+              <div class="region-item">
+                <div class="region-info">
+                  <span class="region-flag">🇺🇸</span>
+                  <span class="region-name">US-East (N. Virginia)</span>
+                </div>
+                <span class="region-ping ping-good">24 ms</span>
+              </div>
+              <div class="region-item">
+                <div class="region-info">
+                  <span class="region-flag">🇪🇺</span>
+                  <span class="region-name">EU-Central (Frankfurt)</span>
+                </div>
+                <span class="region-ping ping-good">38 ms</span>
+              </div>
+              <div class="region-item">
+                <div class="region-info">
+                  <span class="region-flag">🇯🇵</span>
+                  <span class="region-name">AP-Northeast (Tokyo)</span>
+                </div>
+                <span class="region-ping ping-good">62 ms</span>
+              </div>
+              <div class="region-item">
+                <div class="region-info">
+                  <span class="region-flag">🇸🇬</span>
+                  <span class="region-name">AP-Southeast (Singapore)</span>
+                </div>
+                <span class="region-ping ping-moderate">84 ms</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Transactions Data Table Section -->
+        <section class="table-section" id="transactionsSection" aria-label="Recent Transactions">
+          <div class="table-header-row">
+            <div>
+              <h2 class="table-section-title">Live Transactions</h2>
+              <p class="table-section-subtitle">Real-time payment audit log with status tracking and customer attribution</p>
+            </div>
+            <div class="table-controls">
+              <!-- Search Table Input -->
+              <div class="table-search">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="tableFilterInput" placeholder="Filter customer, ID, or tier..." />
+              </div>
+
+              <!-- Status Filter Tabs -->
+              <div class="filter-tabs" id="statusFilterTabs">
+                <button class="filter-tab active" data-status="all">All</button>
+                <button class="filter-tab" data-status="completed">Completed</button>
+                <button class="filter-tab" data-status="pending">Pending</button>
+                <button class="filter-tab" data-status="refunded">Refunded</button>
+              </div>
+
+              <!-- Export CSV Button -->
+              <button class="secondary-btn" id="exportCsvBtn" title="Export transactions table to CSV file">
+                <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Export CSV</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Table Component -->
+          <div class="table-responsive">
+            <table class="data-table" id="transactionsTable">
+              <thead>
+                <tr>
+                  <th data-sort="id" class="sortable">
+                    <span>Transaction ID</span>
+                    <span class="sort-icon">↕</span>
+                  </th>
+                  <th data-sort="customer" class="sortable">
+                    <span>Customer</span>
+                    <span class="sort-icon">↕</span>
+                  </th>
+                  <th data-sort="plan" class="sortable">
+                    <span>Product / Tier</span>
+                    <span class="sort-icon">↕</span>
+                  </th>
+                  <th data-sort="date" class="sortable">
+                    <span>Timestamp</span>
+                    <span class="sort-icon">↕</span>
+                  </th>
+                  <th data-sort="status" class="sortable">
+                    <span>Status</span>
+                    <span class="sort-icon">↕</span>
+                  </th>
+                  <th data-sort="amount" class="sortable text-right">
+                    <span>Amount</span>
+                    <span class="sort-icon">↕</span>
+                  </th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody id="transactionsTableBody">
+                <!-- Dynamically populated rows in script.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Pagination Footer -->
+          <div class="table-footer">
+            <div class="table-summary" id="tableSummary">
+              Showing <span id="showingStart">1</span> to <span id="showingEnd">8</span> of <span id="showingTotal">24</span> entries
+            </div>
+            <div class="pagination-controls">
+              <button class="page-btn" id="prevPageBtn" disabled>&larr; Previous</button>
+              <div class="page-number-group" id="pageNumbers"></div>
+              <button class="page-btn" id="nextPageBtn">Next &rarr;</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div class="footer-left">
+          <span>PulseIQ Analytics Suite v3.8.4</span>
+          <span class="footer-separator">•</span>
+          <span>SOC-2 Type II Certified</span>
+          <span class="footer-separator">•</span>
+          <span class="health-indicator"><span class="dot"></span> All Systems Operational</span>
+        </div>
+        <div class="footer-right">
+          <a href="#docs" class="footer-link">API Docs</a>
+          <a href="#changelog" class="footer-link">Changelog</a>
+          <a href="#privacy" class="footer-link">Privacy Policy</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal: New Transaction / Sale -->
+  <div class="modal-backdrop" id="txModalBackdrop">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Record New Sale</h3>
+        <button class="modal-close-btn" id="closeTxModalBtn" aria-label="Close dialog">&times;</button>
+      </div>
+      <form id="newTxForm" class="modal-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="txCustomerName">Customer / Company Name <span class="required">*</span></label>
+            <input type="text" id="txCustomerName" placeholder="e.g. Acme Corp" required />
+          </div>
+          <div class="form-group">
+            <label for="txCustomerEmail">Billing Email <span class="required">*</span></label>
+            <input type="email" id="txCustomerEmail" placeholder="billing@acme.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="txProduct">Subscription / Tier</label>
+            <select id="txProduct" required>
+              <option value="Enterprise Platform">Enterprise Platform ($2,400/mo)</option>
+              <option value="Pro Team Cloud">Pro Team Cloud ($580/mo)</option>
+              <option value="Growth Starter">Growth Starter ($199/mo)</option>
+              <option value="API Compute Add-on">API Compute Add-on ($120/mo)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="txAmount">Total Amount (USD) <span class="required">*</span></label>
+            <input type="number" id="txAmount" placeholder="2400" min="1" step="0.01" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="txStatus">Payment Status</label>
+            <select id="txStatus">
+              <option value="Completed">Completed</option>
+              <option value="Pending">Pending</option>
+              <option value="Refunded">Refunded</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="txMethod">Payment Rail</label>
+            <select id="txMethod">
+              <option value="Stripe Credit Card">Stripe Credit Card</option>
+              <option value="ACH Wire Transfer">ACH Wire Transfer</option>
+              <option value="Apple Pay">Apple Pay</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="secondary-btn" id="cancelTxBtn">Cancel</button>
+          <button type="submit" class="primary-btn">Record & Update Metrics</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="script.js"></script>
+</body>
 </html>
